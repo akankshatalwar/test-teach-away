@@ -1,0 +1,131 @@
+package com.qa.testclass;
+
+import com.qa.base_class.TestBase;
+import com.qa.pages.MenuSection;
+import org.junit.Assert;
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.interactions.Actions;
+
+import java.util.concurrent.TimeUnit;
+
+public class TeachAwayTest extends TestBase {
+
+    public static void main(String[] args) throws InterruptedException {
+
+
+        System.setProperty("webdriver.chrome.driver","/Users/atalw5/Downloads/chromedriver");
+            WebDriver driver = new ChromeDriver();
+            driver.get("https://www.teachaway.com/");
+
+
+
+        // Using Action class to test menu item which opens up with mouse over
+        // Verify first Element of the menu
+        // used xpath for locating the element
+          Actions actionMenu= new Actions(driver);
+        actionMenu.moveToElement(driver.findElement(By.xpath(".//*[@data-label='Jobs']/span"))).perform();
+        Assert.assertTrue("Jobs is not displayed in the Menu",driver.findElement(By.xpath(".//*[@data-label='Jobs']/span")).isDisplayed());
+        Assert.assertTrue("Jobs is not enabled in the Menu",driver.findElement(By.xpath(".//*[@data-label='Jobs']/span")).isEnabled());
+
+        actionMenu.moveToElement(driver.findElement(By.xpath(".//*[@data-label='Job Board']"))).perform();
+        Thread.sleep(1000);
+        Assert.assertTrue("Job Board is not displayed in the Menu",driver.findElement(By.xpath(".//*[@data-label='Job Board']")).isDisplayed());
+        Assert.assertTrue("Job Board is not enabled in the Menu",driver.findElement(By.xpath(".//*[@data-label='Job Board']")).isEnabled());
+
+        actionMenu.moveToElement(driver.findElement(By.xpath(".//*[@data-label='Destinations']"))).perform();
+        Thread.sleep(1000);
+        Assert.assertTrue("Destinations is not displayed in the Menu",driver.findElement(By.xpath(".//*[@data-label='Destinations']")).isDisplayed());
+        Assert.assertTrue("Destinations is not enabled in the Menu",driver.findElement(By.xpath(".//*[@data-label='Destinations']")).isEnabled());
+
+        actionMenu.moveToElement(driver.findElement(By.xpath(".//*[@data-label='Featured Programs']"))).perform();
+        Thread.sleep(1000);
+        Assert.assertTrue("Featured Programs is not displayed in the Menu",driver.findElement(By.xpath(".//*[@data-label='Featured Programs']")).isDisplayed());
+        Assert.assertTrue("Featured Programs is not enabled in the Menu",driver.findElement(By.xpath(".//*[@data-label='Featured Programs']")).isEnabled());
+
+    //Verify Sub menu of the Featured programs menu
+
+        actionMenu.moveToElement(driver.findElement(By.cssSelector("[class*='tb-megamenu-nav']>li:nth-child(1) li:nth-child(3) ul>li>a[class='nav-link']"))).perform();
+        Thread.sleep(1000);
+        Assert.assertTrue("Abu Dhabi Public Schools is not displayed in the Menu",driver.findElement(By.cssSelector("[class*='tb-megamenu-nav']>li:nth-child(1) li:nth-child(3) ul>li>a[class='nav-link']")).isDisplayed());
+        Assert.assertTrue("Abu Dhabi Public Schools is not enabled in the Menu",driver.findElement(By.cssSelector("[class*='tb-megamenu-nav']>li:nth-child(1) li:nth-child(3) ul>li>a[class='nav-link']")).isEnabled());
+
+
+        actionMenu.moveToElement(driver.findElement(By.xpath(".//*[@data-label='Job Openings']"))).perform();
+        Thread.sleep(1000);
+        Assert.assertTrue("Job Openings is not displayed in the Menu",driver.findElement(By.xpath(".//*[@data-label='Job Openings']")).isDisplayed());
+        Assert.assertTrue("Job Openings is not enabled in the Menu",driver.findElement(By.xpath(".//*[@data-label='Job Openings']")).isEnabled());
+
+        actionMenu.moveToElement(driver.findElement(By.xpath(".//*[@data-label='Teach in the US']"))).perform();
+        Thread.sleep(1000);
+        Assert.assertTrue("Teach in the US is not displayed in the Menu",driver.findElement(By.xpath(".//*[@data-label='Teach in the US']")).isDisplayed());
+        Assert.assertTrue("Teach in the US is not enabled in the Menu",driver.findElement(By.xpath(".//*[@data-label='Teach in the US']")).isEnabled());
+
+        actionMenu.moveToElement(driver.findElement(By.xpath(".//*[@data-label='Community']"))).perform();
+        Thread.sleep(1000);
+        Assert.assertTrue("Community is not displayed in the Menu",driver.findElement(By.xpath(".//*[@data-label='Community']")).isDisplayed());
+        Assert.assertTrue("Community is not enabled in the Menu",driver.findElement(By.xpath(".//*[@data-label='Community']")).isEnabled());
+
+        // Verify second element of the menu
+        // Used CSS to locate the element
+        actionMenu.moveToElement(driver.findElement(By.cssSelector("[class*='tb-megamenu-nav']>li:nth-child(2)"))).perform();
+        Assert.assertTrue("TEFL is not displayed in the Menu",driver.findElement(By.cssSelector("[class*='tb-megamenu-nav']>li:nth-child(2)")).isDisplayed());
+        Assert.assertTrue("TEFL is not enabled in the Menu",driver.findElement(By.cssSelector("[class*='tb-megamenu-nav']>li:nth-child(2)")).isEnabled());
+
+        actionMenu.moveToElement(driver.findElement(By.cssSelector("[class*='tb-megamenu-nav']>li:nth-child(2) li:nth-child(1)"))).perform();
+        Thread.sleep(1000);
+        Assert.assertTrue("TEFL Courses is not displayed in the Menu",driver.findElement(By.cssSelector("[class*='tb-megamenu-nav']>li:nth-child(2) li:nth-child(1)")).isDisplayed());
+        Assert.assertTrue("TEFL Courses is not enabled in the Menu",driver.findElement(By.cssSelector("[class*='tb-megamenu-nav']>li:nth-child(2) li:nth-child(1)")).isEnabled());
+
+
+        actionMenu.moveToElement(driver.findElement(By.cssSelector("[class*='tb-megamenu-nav']>li:nth-child(2) li:nth-child(2)"))).perform();
+        Thread.sleep(1000);
+        Assert.assertTrue("TEFL Certification Guide is not displayed in the Menu",driver.findElement(By.cssSelector("[class*='tb-megamenu-nav']>li:nth-child(2) li:nth-child(2)")).isDisplayed());
+        Assert.assertTrue("TEFL Certification Guide is not enabled in the Menu",driver.findElement(By.cssSelector("[class*='tb-megamenu-nav']>li:nth-child(2) li:nth-child(2)")).isEnabled());
+
+
+        // Verify third element of the menu
+        // Used CSS to locate the element
+
+        actionMenu.moveToElement(driver.findElement(By.cssSelector("[class*='tb-megamenu-nav']>li:nth-child(3)"))).perform();
+        Assert.assertTrue("Teacher Certification is not displayed in the Menu",driver.findElement(By.cssSelector("[class*='tb-megamenu-nav']>li:nth-child(3)")).isDisplayed());
+        Assert.assertTrue("Teacher Certification is not enabled in the Menu",driver.findElement(By.cssSelector("[class*='tb-megamenu-nav']>li:nth-child(3)")).isEnabled());
+
+        actionMenu.moveToElement(driver.findElement(By.cssSelector("[class*='tb-megamenu-nav']>li:nth-child(3) li:nth-child(1)"))).perform();
+        Thread.sleep(1000);
+        Assert.assertTrue("Certification Program is not displayed in the Menu",driver.findElement(By.cssSelector("[class*='tb-megamenu-nav']>li:nth-child(3) li:nth-child(1)")).isDisplayed());
+        Assert.assertTrue("Certification Program is not enabled in the Menu",driver.findElement(By.cssSelector("[class*='tb-megamenu-nav']>li:nth-child(3) li:nth-child(1)")).isEnabled());
+
+
+        actionMenu.moveToElement(driver.findElement(By.cssSelector("[class*='tb-megamenu-nav']>li:nth-child(3) li:nth-child(2)"))).perform();
+        Thread.sleep(1000);
+        Assert.assertTrue("Teacher Certification Guide is not displayed in the Menu",driver.findElement(By.cssSelector("[class*='tb-megamenu-nav']>li:nth-child(3) li:nth-child(2)")).isDisplayed());
+        Assert.assertTrue("Teacher Certification Guide is not enabled in the Menu",driver.findElement(By.cssSelector("[class*='tb-megamenu-nav']>li:nth-child(3) li:nth-child(2)")).isEnabled());
+
+
+
+        // Verify fourth element of the menu
+        // Used CSS to locate the element
+        actionMenu.moveToElement(driver.findElement(By.cssSelector("[class*='tb-megamenu-nav']>li:nth-child(4) "))).perform();
+        Thread.sleep(1000);
+        Assert.assertTrue("Courses is not displayed in the Menu",driver.findElement(By.cssSelector("[class*='tb-megamenu-nav']>li:nth-child(4) ")).isDisplayed());
+        Assert.assertTrue("Courses is not enabled in the Menu",driver.findElement(By.cssSelector("[class*='tb-megamenu-nav']>li:nth-child(4) ")).isEnabled());
+
+
+
+        driver.quit();
+
+    }
+
+}
+
+
+
+
+
+
+
+
+
