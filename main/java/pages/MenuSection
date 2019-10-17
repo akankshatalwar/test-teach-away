@@ -1,0 +1,28 @@
+package com.qa.pages;
+
+import com.qa.base_class.TestBase;
+import org.junit.Assert;
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.interactions.Actions;
+import org.openqa.selenium.support.FindBy;
+import org.openqa.selenium.support.PageFactory;
+
+public class MenuSection extends TestBase {
+
+    @FindBy(xpath="//*[@data-label='Jobs']/span")
+    WebElement menuItemLevel1First;
+
+    @FindBy(xpath="//*[@data-label='Job Board']")
+    WebElement menuItemLevel2First;
+
+    public MenuSection(){
+        PageFactory.initElements(driver, this);
+    }
+
+
+
+
+
+
+}
