@@ -1,0 +1,9 @@
+package com.qa.pages;
+
+import com.qa.base_class.TestBase;
+
+public class RegisterPage extends TestBase {
+
+
+
+}
